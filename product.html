@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produit | Nadia Dahby</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Amiri:wght@400;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" style="background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/nadialogo.png" alt="Nadia Dahby" class="logo-img">
+                <span class="logo-tagline">HAUTE COUTURE</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#caftan">Caftan</a></li>
+                <li class="has-dropdown">
+                    <a href="index.html#jellaba">Jellaba <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#jellaba-femme">Femme</a></li>
+                        <li><a href="index.html#jellaba-homme">Homme</a></li>
+                        <li><a href="index.html#jellaba-enfant">Enfant</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="index.html#gandoura">Gandoura <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#gandoura-femme">Femme</a></li>
+                        <li><a href="index.html#gandoura-homme">Homme</a></li>
+                        <li><a href="index.html#gandoura-enfant">Enfant</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#kimono">Kimono-Tunique</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">À Propos</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="search-wrapper">
+                    <button class="search-toggle" aria-label="Rechercher">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="M21 21l-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+                <button class="cart-toggle" aria-label="Panier" id="cartToggle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Votre Panier</h3>
+            <button class="cart-close" id="cartClose">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="cart-empty">Votre panier est vide</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">0 DH</span>
+            </div>
+            <a href="commande.html" class="btn btn-primary btn-full" id="checkoutBtn">Commander</a>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Product Detail -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-breadcrumb" id="productBreadcrumb">
+                <a href="index.html">Accueil</a> &rsaquo;
+                <a href="#" id="breadcrumbCategory">Collection</a> &rsaquo;
+                <span id="breadcrumbProduct">Produit</span>
+            </div>
+
+            <div class="product-detail-grid">
+                <!-- Image Gallery -->
+                <div class="product-gallery">
+                    <div class="product-gallery-main">
+                        <img id="mainImage" src="" alt="">
+                    </div>
+                    <div class="product-gallery-thumbs" id="thumbsContainer">
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-detail-info">
+                    <h1 id="productName"></h1>
+                    <div class="product-detail-price" id="productPrice"></div>
+                    <p class="product-detail-desc" id="productDesc"></p>
+
+                    <ul class="product-detail-specs" id="productSpecs">
+                    </ul>
+
+                    <span class="size-label">Taille</span>
+                    <div class="size-selector" id="sizeSelector">
+                    </div>
+
+                    <button class="product-add-btn" id="addToCartBtn">Ajouter au Panier</button>
+
+                    <p class="product-note">Chaque pièce est confectionnée à la main par nos maîtres artisans. Délai de confection : 2 à 4 semaines.</p>
+
+                    <!-- Accordion: Livraison & Retours -->
+                    <div class="product-accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header" type="button">
+                                <span class="accordion-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                                </span>
+                                <span>Délai de livraison</span>
+                                <span class="accordion-toggle">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <ul>
+                                    <li>24h sur Casablanca</li>
+                                    <li>48h jours ouvrables hors Casablanca</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header" type="button">
+                                <span class="accordion-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+                                </span>
+                                <span>Retours et échanges</span>
+                                <span class="accordion-toggle">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Vous avez 24h pour retourner/échanger votre achat. Les articles doivent être retournés dans leur état d'origine.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header" type="button">
+                                <span class="accordion-icon">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                                </span>
+                                <span>Guide des tailles</span>
+                                <span class="accordion-toggle">+</span>
+                            </button>
+                            <div class="accordion-content accordion-content-table">
+                                <div class="size-guide-wrapper">
+                                    <table class="size-guide-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Taille</th>
+                                                <th>Épaules</th>
+                                                <th>Buste</th>
+                                                <th>Tour de Taille</th>
+                                                <th>Longueur</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>S</td><td>38</td><td>96</td><td>79</td><td>138</td></tr>
+                                            <tr><td>M</td><td>39</td><td>101</td><td>83</td><td>142</td></tr>
+                                            <tr><td>L</td><td>40</td><td>106</td><td>88</td><td>146</td></tr>
+                                            <tr><td>XL</td><td>41</td><td>112</td><td>93</td><td>150</td></tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="size-guide-illustration">
+                                        <img src="images/svg.png" alt="Guide des tailles - Mesures femme" style="width:100%;height:auto;">
+                                    </div>
+                                </div>
+                                <p style="font-size:11px;color:var(--text-light);margin-top:8px;">Mesures en cm. Pour "Sur Mesure", contactez-nous.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="container">
+            <h2>Vous aimerez aussi</h2>
+            <div class="related-grid" id="relatedGrid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo footer-logo">
+                        <img src="images/nadialogo.png" alt="Nadia Dahby" class="logo-img">
+                    </a>
+                    <p>Préserver l'art de la couture marocaine traditionnelle, un point à la fois.</p>
+                    <a href="https://www.instagram.com" target="_blank" class="footer-instagram" aria-label="Instagram">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="about.html">À Propos</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#gallery">Galerie</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="collection-caftan.html">Collection Caftan</a></li>
+                        <li><a href="collection-kimono.html">Collection Kimono</a></li>
+                        <li><a href="collection-jellaba.html">Collection Jellaba</a></li>
+                        <li><a href="index.html#services">Sur Mesure</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Politique de remboursement</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Newsletter</h4>
+                <p>Inscrivez-vous pour recevoir nos dernières collections et offres exclusives.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+                </form>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nadia Dahby. Tous droits réservés.</p>
+                <p class="arabic-text">نادية دهبي للأزياء الراقية</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var productId = urlParams.get('id');
+        var product = productId ? getProductById(productId) : null;
+
+        if (!product) {
+            window.location.href = 'index.html';
+            return;
+        }
+
+        // Page title
+        document.title = product.name + ' | Nadia Dahby';
+
+        // Breadcrumb
+        var categoryNames = { caftan: 'Collection Caftan', kimono: 'Collection Kimono', jellaba: 'Collection Jellaba' };
+        var categoryPages = { caftan: 'collection-caftan.html', kimono: 'collection-kimono.html', jellaba: 'collection-jellaba.html' };
+        var breadcrumbCat = document.getElementById('breadcrumbCategory');
+        breadcrumbCat.textContent = categoryNames[product.category] || 'Collection';
+        breadcrumbCat.href = categoryPages[product.category] || '#';
+        document.getElementById('breadcrumbProduct').textContent = product.name;
+
+        // Main image
+        var mainImg = document.getElementById('mainImage');
+        mainImg.src = product.images[0];
+        mainImg.alt = product.name;
+
+        // Thumbnails
+        var thumbsContainer = document.getElementById('thumbsContainer');
+        product.images.forEach(function(imgSrc, index) {
+            var thumb = document.createElement('img');
+            thumb.src = imgSrc;
+            thumb.alt = product.name + ' - vue ' + (index + 1);
+            if (index === 0) thumb.classList.add('active');
+            thumb.addEventListener('click', function() {
+                mainImg.src = imgSrc;
+                thumbsContainer.querySelectorAll('img').forEach(function(t) { t.classList.remove('active'); });
+                thumb.classList.add('active');
+            });
+            thumbsContainer.appendChild(thumb);
+        });
+
+        // Product info
+        document.getElementById('productName').textContent = product.name;
+        document.getElementById('productPrice').textContent = formatPrice(product.price);
+        document.getElementById('productDesc').textContent = product.description;
+
+        // Specs
+        var specsEl = document.getElementById('productSpecs');
+        product.details.forEach(function(detail) {
+            var li = document.createElement('li');
+            var parts = detail.split(':');
+            if (parts.length > 1) {
+                li.innerHTML = '<strong>' + parts[0] + ':</strong>' + parts.slice(1).join(':');
+            } else {
+                li.textContent = detail;
+            }
+            specsEl.appendChild(li);
+        });
+
+        // Sizes
+        var sizeSelector = document.getElementById('sizeSelector');
+        var selectedSize = product.sizes[0];
+        product.sizes.forEach(function(size, index) {
+            var btn = document.createElement('button');
+            btn.className = 'size-btn' + (index === 0 ? ' active' : '');
+            btn.textContent = size;
+            btn.dataset.size = size;
+            btn.addEventListener('click', function() {
+                sizeSelector.querySelectorAll('.size-btn').forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                selectedSize = size;
+            });
+            sizeSelector.appendChild(btn);
+        });
+
+        // Add to cart
+        document.getElementById('addToCartBtn').addEventListener('click', function() {
+            var cartName = product.name;
+            if (selectedSize && selectedSize !== 'Standard') {
+                cartName += ' (' + selectedSize + ')';
+            }
+            addToCart(product.id + '-' + selectedSize.toLowerCase().replace(/\s+/g, '-'), cartName, product.price, product.images[0]);
+        });
+
+        // Accordion toggle
+        document.querySelectorAll('.accordion-header').forEach(function(header) {
+            header.addEventListener('click', function() {
+                var item = header.parentElement;
+                item.classList.toggle('open');
+            });
+        });
+
+        // Related products
+        var relatedGrid = document.getElementById('relatedGrid');
+        var categoryProducts = getProductsByCategory(product.category);
+        var related = categoryProducts.filter(function(p) { return p.id !== product.id; }).slice(0, 4);
+
+        related.forEach(function(rp) {
+            var item = document.createElement('div');
+            item.className = 'collection-page-item';
+            item.style.cursor = 'pointer';
+            item.innerHTML = '<img src="' + rp.images[0] + '" alt="' + rp.name + '" style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px;display:block;">' +
+                '<div class="collection-item-info">' +
+                '<p class="collection-item-name">' + rp.name + '</p>' +
+                '</div>';
+            item.addEventListener('click', function() {
+                window.location.href = 'product.html?id=' + rp.id;
+            });
+            relatedGrid.appendChild(item);
+        });
+    });
+
+    // ===== Image Zoom on Hover =====
+    var galleryMain = document.querySelector('.product-gallery-main');
+    var zoomImg = document.getElementById('mainImage');
+    if (galleryMain && zoomImg) {
+        galleryMain.addEventListener('mouseenter', function() {
+            galleryMain.classList.add('zoomed');
+        });
+        galleryMain.addEventListener('mouseleave', function() {
+            galleryMain.classList.remove('zoomed');
+            zoomImg.style.transformOrigin = 'center center';
+        });
+        galleryMain.addEventListener('mousemove', function(e) {
+            if (!galleryMain.classList.contains('zoomed')) return;
+            var rect = galleryMain.getBoundingClientRect();
+            var x = ((e.clientX - rect.left) / rect.width) * 100;
+            var y = ((e.clientY - rect.top) / rect.height) * 100;
+            zoomImg.style.transformOrigin = x + '% ' + y + '%';
+        });
+    }
+    </script>
+</body>
+</html>

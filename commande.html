@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commander | Atelier Dahby</title>
+    <title>Commander | Nadia Dahby</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -272,7 +272,7 @@
     <nav class="navbar scrolled">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Atelier Dahby" class="logo-img">
+                <img src="images/nadialogo.png" alt="Nadia Dahby" class="logo-img">
                 <span class="logo-tagline">HAUTE COUTURE</span>
             </a>
             <button class="nav-toggle" aria-label="Toggle navigation">
@@ -445,7 +445,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="index.html" class="logo footer-logo">
-                        <img src="images/logo.png" alt="Atelier Dahby" class="logo-img">
+                        <img src="images/nadialogo.png" alt="Nadia Dahby" class="logo-img">
                     </a>
                     <p>Préserver l'art de la couture marocaine traditionnelle, un point à la fois.</p>
                 </div>
@@ -459,7 +459,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Atelier Dahby. Tous droits réservés.</p>
+                <p>&copy; 2024 Nadia Dahby. Tous droits réservés.</p>
                 <p class="arabic-text">نادية دهبي للأزياء الراقية</p>
             </div>
         </div>
@@ -469,7 +469,7 @@
     <script>
         // Load order items from cart
         document.addEventListener('DOMContentLoaded', function() {
-            const cart = JSON.parse(localStorage.getItem('atelierDahbyCart')) || [];
+            const cart = JSON.parse(localStorage.getItem('nadiaDahbyCart')) || [];
             const orderItems = document.getElementById('orderItems');
             const orderSubtotal = document.getElementById('orderSubtotal');
             const orderTotal = document.getElementById('orderTotal');
@@ -530,12 +530,12 @@
                 };
 
                 // Save to localStorage (for demo purposes)
-                const orders = JSON.parse(localStorage.getItem('atelierDahbyOrders')) || [];
+                const orders = JSON.parse(localStorage.getItem('nadiaDahbyOrders')) || [];
                 orders.push(orderData);
-                localStorage.setItem('atelierDahbyOrders', JSON.stringify(orders));
+                localStorage.setItem('nadiaDahbyOrders', JSON.stringify(orders));
 
                 // Clear cart
-                localStorage.removeItem('atelierDahbyCart');
+                localStorage.removeItem('nadiaDahbyCart');
 
                 // Show confirmation
                 checkoutContent.style.display = 'none';

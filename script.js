@@ -1,5 +1,5 @@
 /**
- * Atelier Dahby
+ * Nadia Dahby
  * Haute Couture Marocaine
  * JavaScript functionality
  */
@@ -36,6 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             window.addEventListener('load', hidePreloader);
         }
+
+        // Safety timeout: force hide after 4 seconds max
+        setTimeout(hidePreloader, 4000);
     }
 
     // ===================================
@@ -192,7 +195,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===================================
     // Navbar Scroll Effect
     // ===================================
+    const isHomePage = document.querySelector('.hero') !== null;
     function handleScroll() {
+        if (!isHomePage) {
+            navbar.classList.add('scrolled');
+            return;
+        }
         if (window.scrollY > 100) {
             navbar.classList.add('scrolled');
         } else {
@@ -422,7 +430,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const activeLinkStyle = document.createElement('style');
     activeLinkStyle.textContent = `
         .nav-menu a.active {
-            color: var(--secondary, #C4A35A) !important;
+            color: var(--primary, #C4818A) !important;
         }
         .nav-menu a.active::after {
             width: 100% !important;
@@ -594,7 +602,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===================================
 
     // Initialize cart from localStorage
-    let cart = JSON.parse(localStorage.getItem('atelierDahbyCart')) || [];
+    let cart = JSON.parse(localStorage.getItem('nadiaDahbyCart')) || [];
 
     // Cart elements
     const cartToggle = document.getElementById('cartToggle');
@@ -631,7 +639,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Save cart to localStorage
     function saveCart() {
-        localStorage.setItem('atelierDahbyCart', JSON.stringify(cart));
+        localStorage.setItem('nadiaDahbyCart', JSON.stringify(cart));
     }
 
     // Update cart display
@@ -648,7 +656,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             cartItems.innerHTML = cart.map(item => `
                 <div class="cart-item" data-id="${item.id}">
-                    <div class="cart-item-image">&#128090;</div>
+                    <div class="cart-item-image">${item.image ? '<img src="' + item.image + '" alt="' + item.name + '" style="width:70px;height:70px;object-fit:cover;border-radius:4px;">' : '&#128090;'}</div>
                     <div class="cart-item-details">
                         <div class="cart-item-name">${item.name}</div>
                         <div class="cart-item-price">${item.price.toLocaleString()} DH</div>
@@ -669,13 +677,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Make functions globally accessible
-    window.addToCart = function(id, name, price) {
+    window.addToCart = function(id, name, price, image) {
         const existingItem = cart.find(item => item.id === id);
 
         if (existingItem) {
             existingItem.quantity += 1;
         } else {
-            cart.push({ id, name, price, quantity: 1 });
+            cart.push({ id, name, price, quantity: 1, image: image || null });
         }
 
         saveCart();
@@ -751,5 +759,116 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial cart display
     updateCartDisplay();
 
-    console.log('Atelier Dahby website loaded successfully!');
+    // ===================================
+    // Créations Carousel - Auto scroll + arrows
+    // ===================================
+    const track = document.getElementById('creationsTrack');
+    const prevBtn = document.getElementById('creationsPrev');
+    const nextBtn = document.getElementById('creationsNext');
+
+    if (track) {
+        // Duplicate cards for seamless infinite loop
+        track.innerHTML += track.innerHTML;
+
+        let position = 0;
+        const halfWidth = track.scrollWidth / 2;
+
+        function scrollCarousel() {
+            position += 0.8;
+            if (position >= halfWidth) {
+                position = 0;
+            }
+            track.style.transform = `translateX(-${position}px)`;
+            requestAnimationFrame(scrollCarousel);
+        }
+
+        requestAnimationFrame(scrollCarousel);
+    }
+
+    // ===================================
+    // Product Slider (Collection Pages)
+    // ===================================
+    document.querySelectorAll('.product-slider').forEach(slider => {
+        const track = slider.querySelector('.product-slider-track');
+        const dots = slider.querySelectorAll('.dot');
+        let currentSlide = 0;
+        let startX = 0;
+        let isDragging = false;
+        let didSwipe = false;
+
+        function goToSlide(index) {
+            currentSlide = index;
+            track.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); goToSlide(i); });
+        });
+
+        // Prevent parent link navigation after swipe
+        slider.addEventListener('click', (e) => {
+            if (didSwipe) { e.preventDefault(); e.stopPropagation(); didSwipe = false; }
+        }, true);
+
+        // Swipe support
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            didSwipe = false;
+        });
+
+        slider.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            const diff = startX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) {
+                didSwipe = true;
+                if (diff > 0 && currentSlide < 1) goToSlide(1);
+                else if (diff < 0 && currentSlide > 0) goToSlide(0);
+            }
+            isDragging = false;
+        });
+
+        // Mouse drag support
+        slider.addEventListener('mousedown', (e) => {
+            startX = e.clientX;
+            isDragging = true;
+            didSwipe = false;
+            e.preventDefault();
+        });
+
+        slider.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+            const diff = startX - e.clientX;
+            if (Math.abs(diff) > 40) {
+                didSwipe = true;
+                if (diff > 0 && currentSlide < 1) goToSlide(1);
+                else if (diff < 0 && currentSlide > 0) goToSlide(0);
+            }
+            isDragging = false;
+        });
+
+        slider.addEventListener('mouseleave', () => { isDragging = false; });
+    });
+
+    // ===================================
+    // Video Parallax Gallery
+    // ===================================
+    const parallaxItems = document.querySelectorAll('.video-parallax-item');
+
+    if (parallaxItems.length > 0) {
+        const parallaxObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        parallaxItems.forEach(item => parallaxObserver.observe(item));
+    }
+
+    console.log('Nadia Dahby website loaded successfully!');
 });

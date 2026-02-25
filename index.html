@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atelier Dahby | Haute Couture Marocaine</title>
+    <title>Nadia Dahby | Haute Couture Marocaine</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Amiri:wght@400;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -11,7 +11,7 @@
     <!-- Preloader -->
     <div class="preloader" id="preloader">
         <div class="preloader-content">
-            <img src="images/logo.png" alt="Atelier Dahby" class="preloader-logo">
+            <img src="images/nadialogo.png" alt="Nadia Dahby" class="preloader-logo">
             <span class="preloader-tagline">HAUTE COUTURE</span>
             <div class="preloader-bar">
                 <div class="preloader-bar-fill"></div>
@@ -23,7 +23,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">
-                <img src="images/logo.png" alt="Atelier Dahby" class="logo-img">
+                <img src="images/nadialogo.png" alt="Nadia Dahby" class="logo-img">
                 <span class="logo-tagline">HAUTE COUTURE</span>
             </a>
             <button class="nav-toggle" aria-label="Toggle navigation">
@@ -51,8 +51,8 @@
                     </ul>
                 </li>
                 <li><a href="#kimono">Kimono-Tunique</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about">À Propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">À Propos</a></li>
             </ul>
             <div class="nav-actions">
                 <div class="search-wrapper">
@@ -114,9 +114,9 @@
         <div class="hero-pattern"></div>
         <div class="hero-content">
             <span class="hero-subtitle">Beldi Moderne & Traditionnel</span>
-            <h1>ATELIER DAHBY</h1>
+            <h1>NADIA DAHBY</h1>
             <p class="hero-brand">HAUTE COUTURE</p>
-            <p>Caftans, Jellabas & Takchitas pour Femmes, Hommes et Enfants</p>
+            <p>Caftans, Jellabas & Kimonos pour Femmes</p>
             <div class="hero-buttons">
                 <a href="#services" class="btn btn-primary">Nos Créations</a>
                 <a href="#contact" class="btn btn-secondary">Prendre RDV</a>
@@ -128,361 +128,230 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Nos Réalisations</span>
-                <h2>Galerie</h2>
-                <p>Un aperçu de nos créations artisanales</p>
+    <!-- Video Parallax Gallery -->
+    <section id="gallery" class="video-parallax-gallery">
+        <div class="video-parallax-item">
+            <div class="video-parallax-video">
+                <video autoplay muted loop playsinline>
+                    <source src="images/kimonovideo2.mp4" type="video/mp4">
+                </video>
             </div>
-            <div class="gallery-grid gallery-4">
-                <div class="gallery-item">
-                    <img src="images/collection-caftan.jpg" alt="Collection Exclusive de Caftans">
-                    <div class="gallery-content">
-                        <h3 class="gallery-title">COLLECTION EXCLUSIVE<br>DE CAFTANS</h3>
-                        <a href="collection-femme.html" class="gallery-btn">SHOP NOW</a>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/collection-djellaba.jpg" alt="Collection Djellaba">
-                    <div class="gallery-content">
-                        <h3 class="gallery-title">COLLECTION DJELLABA</h3>
-                        <a href="collection-femme.html" class="gallery-btn">SHOP NOW</a>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/collection-caftan-simple.jpg" alt="Collection Caftan Simple">
-                    <div class="gallery-content">
-                        <h3 class="gallery-title">COLLECTION CAFTAN<br>SIMPLE</h3>
-                        <a href="collection-femme.html" class="gallery-btn">SHOP NOW</a>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/collection-kimono.jpg" alt="Collection Kimono">
-                    <div class="gallery-content">
-                        <h3 class="gallery-title">COLLECTION KIMONO</h3>
-                        <a href="collection-femme.html" class="gallery-btn">SHOP NOW</a>
-                    </div>
-                </div>
+            <div class="video-parallax-text">
+                <span class="video-parallax-label">Collection</span>
+                <h2 class="video-parallax-title">KIMONO</h2>
+                <a href="collection-kimono.html" class="video-parallax-btn">Découvrir</a>
+            </div>
+        </div>
+        <div class="video-parallax-item reverse">
+            <div class="video-parallax-video">
+                <video autoplay muted loop playsinline>
+                    <source src="images/video2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-parallax-text">
+                <span class="video-parallax-label">Collection</span>
+                <h2 class="video-parallax-title">CAFTAN</h2>
+                <a href="collection-caftan.html" class="video-parallax-btn">Découvrir</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Nos Créations</span>
-                <h2>Nos Services</h2>
-                <p>Beldi Moderne & Traditionnel pour toute la famille</p>
+    <!-- Créations Section -->
+    <section id="services" class="creations-section">
+        <div class="creations-header">
+            <div class="creations-title-wrap">
+                <h2 class="creations-heading">Découvrez les créations de l'Nadia Dahby</h2>
+                <a href="collection-femme.html" class="creations-voir-tout">VOIR TOUT</a>
             </div>
-            <div class="services-grid">
-                <a href="collection-femme.html" class="service-card featured service-card-link">
-                    <div class="service-badge">Populaire</div>
-                    <div class="service-icon">
-                        <span>&#9733;</span>
+        </div>
+        <div class="creations-carousel" id="creationsCarousel">
+            <div class="creations-track" id="creationsTrack">
+                <a href="collection-femme.html" class="creation-card">
+                    <img src="images/collection-caftan.jpg" alt="Caftan Jade">
+                    <div class="creation-info">
+                        <h4>Caftan Jade Noctis</h4>
                     </div>
-                    <h3>Collection Femme</h3>
-                    <p>Caftans, Takchitas et Jellabas pour femmes. Du beldi moderne aux créations traditionnelles pour mariages et cérémonies.</p>
-                    <ul class="service-features">
-                        <li>Caftans de Mariage</li>
-                        <li>Takchitas Modernes</li>
-                        <li>Jellabas Beldi</li>
-                    </ul>
-                    <span class="view-collection">Voir la collection &rarr;</span>
                 </a>
-                <div class="service-card featured">
-                    <div class="service-badge">Sur Mesure</div>
-                    <div class="service-icon">
-                        <span>&#9670;</span>
+                <a href="collection-femme.html" class="creation-card">
+                    <img src="images/collection-djellaba.jpg" alt="Caftan Vert">
+                    <div class="creation-info">
+                        <h4>Caftan Émeraude</h4>
                     </div>
-                    <h3>Collection Homme</h3>
-                    <p>Jellabas, Jabadors et Gandoras sur mesure pour hommes. Chaque pièce est confectionnée selon vos mesures exactes.</p>
-                    <ul class="service-features">
-                        <li>Jellabas Sur Mesure</li>
-                        <li>Jabadors Personnalisés</li>
-                        <li>Gandoras Uniques</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-badge">Sur Mesure</div>
-                    <div class="service-icon">
-                        <span>&#9734;</span>
+                </a>
+                <a href="collection-femme.html" class="creation-card">
+                    <img src="images/collection-caftan-simple.jpg" alt="Caftan Rouge">
+                    <div class="creation-info">
+                        <h4>Caftan Rouge Ombre</h4>
                     </div>
-                    <h3>Collection Enfant</h3>
-                    <p>Tenues traditionnelles sur mesure pour enfants. Confectionnées selon les mesures de votre enfant pour un ajustement parfait.</p>
-                    <ul class="service-features">
-                        <li>Mini Caftans Sur Mesure</li>
-                        <li>Jabadors Personnalisés</li>
-                        <li>Jellabas Enfants</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <span>&#10022;</span>
+                </a>
+                <a href="collection-femme.html" class="creation-card">
+                    <img src="images/collection-kimono.jpg" alt="Caftan Menthe">
+                    <div class="creation-info">
+                        <h4>Caftan Menthe Royale</h4>
                     </div>
-                    <h3>Beldi Moderne</h3>
-                    <p>Réinterprétation contemporaine des classiques marocains pour Femmes, Hommes et Enfants. Coupes modernes et broderies raffinées.</p>
-                    <ul class="service-features">
-                        <li>Femmes, Hommes, Enfants</li>
-                        <li>Coupes Contemporaines</li>
-                        <li>Tissus Premium</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <span>&#9827;</span>
+                </a>
+                <a href="collection-femme.html" class="creation-card">
+                    <img src="images/couture.png" alt="Haute Couture">
+                    <div class="creation-info">
+                        <h4>Takchita Dorée</h4>
                     </div>
-                    <h3>Style Traditionnel</h3>
-                    <p>Authenticité et savoir-faire ancestral pour Femmes, Hommes et Enfants. Broderie Fassi, Rbati, Sfifa et Akaad.</p>
-                    <ul class="service-features">
-                        <li>Femmes, Hommes, Enfants</li>
-                        <li>Broderie Artisanale</li>
-                        <li>Sfifa & Akaad</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <span>&#9830;</span>
+                </a>
+                <a href="collection-femme.html" class="creation-card">
+                    <img src="images/kimonovert.jpg" alt="Tenue 1">
+                    <div class="creation-info">
+                        <h4>Tenue Nuit d'Or</h4>
                     </div>
-                    <h3>Sur Mesure</h3>
-                    <p>Créations personnalisées selon vos envies. Choix des tissus, couleurs et broderies pour une pièce unique.</p>
-                    <ul class="service-features">
-                        <li>Consultation Privée</li>
-                        <li>Design Personnalisé</li>
-                        <li>Retouches Incluses</li>
-                    </ul>
-                </div>
+                </a>
+                <a href="collection-femme.html" class="creation-card">
+                    <img src="images/tenuex.jpg" alt="Tenue X">
+                    <div class="creation-info">
+                        <h4>Tenue Royale</h4>
+                    </div>
+                </a>
+                <a href="collection-femme.html" class="creation-card">
+                    <img src="images/tenue3.jpg" alt="Tenue 3">
+                    <div class="creation-info">
+                        <h4>Tenue Élégante</h4>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section id="process" class="process">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Notre Méthode</span>
-                <h2>Notre Processus</h2>
-                <p>De la consultation à la création finale</p>
-            </div>
-            <div class="process-timeline">
-                <div class="process-step">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3>Consultation</h3>
-                        <p>Nous discutons de votre vision, de l'occasion et de vos préférences. Ensemble, nous explorons les tissus, couleurs et designs.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h3>Prise de Mesures</h3>
-                        <p>Des mesures précises sont prises pour garantir un ajustement parfait. Chaque courbe est soigneusement notée.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h3>Choix des Tissus</h3>
-                        <p>Choisissez parmi notre collection de soies, brocarts, crêpes et tissus marocains traditionnels.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <h3>Confection</h3>
-                        <p>Nadia donne vie à votre vêtement avec des techniques ancestrales transmises de génération en génération.</p>
-                    </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">05</div>
-                    <div class="step-content">
-                        <h3>Essayage Final</h3>
-                        <p>Un essayage final assure que chaque détail est parfait. Les ajustements nécessaires sont effectués.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Testimonials Section -->
+
+    <!-- Testimonials Background Banner -->
     <section class="testimonials">
+        <div class="testimonials-banner-text">
+            <h2>L'Art du Caftan</h2>
+        </div>
+    </section>
+
+    <!-- Collections Caftan Section -->
+    <section class="collections-caftan">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">Témoignages</span>
-                <h2>Ce Que Disent Nos Clientes</h2>
+                <span class="section-subtitle">Notre Savoir-Faire</span>
+                <h2>Collections Caftan</h2>
+                <a href="collection-caftan.html" style="margin-top: 10px; display: inline-block; color: var(--dark); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; text-decoration: underline; text-underline-offset: 4px;">Voir Tout</a>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Mon caftan de mariage était magnifique. L'attention aux détails et la qualité de la broderie étaient exceptionnelles. Tout le monde m'a demandé qui était ma couturière !"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">F</div>
-                        <div class="author-info">
-                            <strong>Fatima Z.</strong>
-                            <span>Mariée, Casablanca</span>
-                        </div>
+            <div class="collections-caftan-grid">
+                <div class="collection-caftan-card">
+                    <img src="images/collection-caftan.jpg" alt="Caftan Traditionnel">
+                    <div class="collection-caftan-info">
+                        <h3>Caftan Traditionnel</h3>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Je viens chez Nadia depuis des années pour mes jellabas. Le savoir-faire est incomparable, et elle se souvient toujours de mes préférences. Une vraie artiste !"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">M</div>
-                        <div class="author-info">
-                            <strong>Meryem A.</strong>
-                            <span>Cliente Fidèle</span>
-                        </div>
+                <div class="collection-caftan-card">
+                    <img src="images/kimonovert.jpg" alt="Caftan Moderne">
+                    <div class="collection-caftan-info">
+                        <h3>Caftan Moderne</h3>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"Elle a restauré le caftan vintage de ma grand-mère parfaitement. Il semblait neuf tout en gardant son caractère original. Travail incroyable !"</p>
+                <div class="collection-caftan-card">
+                    <img src="images/tenuex.jpg" alt="Caftan Beldi">
+                    <div class="collection-caftan-info">
+                        <h3>Caftan Beldi</h3>
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">S</div>
-                        <div class="author-info">
-                            <strong>Sara M.</strong>
-                            <span>Rabat</span>
-                        </div>
+                </div>
+                <div class="collection-caftan-card">
+                    <img src="images/tenue3.jpg" alt="Caftan Élégant">
+                    <div class="collection-caftan-info">
+                        <h3>Caftan Élégant</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Kimono Banner -->
+    <section class="banner-kimono">
+        <div class="testimonials-banner-text">
+            <h2>L'Art du Kimono</h2>
+        </div>
+    </section>
+
+    <!-- Collections Kimono Section -->
+    <section class="collections-caftan">
         <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <span class="section-subtitle">Contact</span>
-                    <h2>Visitez Notre Atelier</h2>
-                    <p>Nous vous accueillons dans notre atelier pour découvrir l'art de la couture marocaine traditionnelle.</p>
-
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="contact-icon">&#9873;</span>
-                            <div>
-                                <strong>Adresse</strong>
-                                <p>123 Derb Al-Khiyata<br>Médina, Fès, Maroc</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">&#9742;</span>
-                            <div>
-                                <strong>Téléphone</strong>
-                                <p>+212 5XX-XXXXXX</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">&#9993;</span>
-                            <div>
-                                <strong>Email</strong>
-                                <p>contact@ndhc.ma</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">&#9200;</span>
-                            <div>
-                                <strong>Horaires</strong>
-                                <p>Lun - Sam: 9h00 - 19h00<br>Dimanche: Fermé</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="#" class="social-link">Instagram</a>
-                        <a href="#" class="social-link">Facebook</a>
-                        <a href="#" class="social-link">WhatsApp</a>
+            <div class="section-header">
+                <span class="section-subtitle">Notre Savoir-Faire</span>
+                <h2>Collections Kimono-Tunique</h2>
+                <a href="collection-kimono.html" style="margin-top: 10px; display: inline-block; color: var(--dark); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; text-decoration: underline; text-underline-offset: 4px;">Voir Tout</a>
+            </div>
+            <div class="collections-caftan-grid">
+                <div class="collection-caftan-card">
+                    <img src="images/collection-kimono.jpg" alt="Kimono Classique">
+                    <div class="collection-caftan-info">
+                        <h3>Kimono Classique</h3>
                     </div>
                 </div>
-
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
-                        <h3>Prendre Rendez-vous</h3>
-                        <div class="form-group">
-                            <label for="name">Nom Complet</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Adresse Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Téléphone</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Souhaité</label>
-                            <select id="service" name="service">
-                                <option value="">Choisir un service</option>
-                                <option value="femme">Collection Femme</option>
-                                <option value="homme">Collection Homme</option>
-                                <option value="enfant">Collection Enfant</option>
-                                <option value="beldi">Beldi Moderne</option>
-                                <option value="traditionnel">Style Traditionnel</option>
-                                <option value="surmesure">Sur Mesure</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Votre Message</label>
-                            <textarea id="message" name="message" rows="4"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Envoyer</button>
-                    </form>
+                <div class="collection-caftan-card">
+                    <img src="images/collection-djellaba.jpg" alt="Kimono Moderne">
+                    <div class="collection-caftan-info">
+                        <h3>Kimono Moderne</h3>
+                    </div>
+                </div>
+                <div class="collection-caftan-card">
+                    <img src="images/kimonovert.jpg" alt="Tunique Élégante">
+                    <div class="collection-caftan-info">
+                        <h3>Tunique Élégante</h3>
+                    </div>
+                </div>
+                <div class="collection-caftan-card">
+                    <img src="images/tenue3.jpg" alt="Kimono Beldi">
+                    <div class="collection-caftan-info">
+                        <h3>Kimono Beldi</h3>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Jellaba Banner -->
+    <section class="banner-jellaba">
+        <div class="testimonials-banner-text">
+            <h2>L'Art de la Jellaba</h2>
+        </div>
+    </section>
+
+    <!-- Collections Jellaba Section -->
+    <section class="collections-caftan">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <div class="image-frame">
-                        <div class="placeholder-image about-placeholder" data-type="atelier">
-                            <span class="placeholder-icon">&#9986;</span>
-                            <span class="placeholder-text">Photo Atelier</span>
-                        </div>
-                    </div>
-                    <div class="experience-badge">
-                        <span class="years">30+</span>
-                        <span class="text">Ans d'Excellence</span>
+            <div class="section-header">
+                <span class="section-subtitle">Notre Savoir-Faire</span>
+                <h2>Collections Jellaba</h2>
+                <a href="collection-jellaba.html" style="margin-top: 10px; display: inline-block; color: var(--dark); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; text-decoration: underline; text-underline-offset: 4px;">Voir Tout</a>
+            </div>
+            <div class="collections-caftan-grid">
+                <div class="collection-caftan-card">
+                    <img src="images/collection-djellaba.jpg" alt="Jellaba Classique">
+                    <div class="collection-caftan-info">
+                        <h3>Jellaba Classique</h3>
                     </div>
                 </div>
-                <div class="about-content">
-                    <span class="section-subtitle">Notre Histoire</span>
-                    <h2>L'Art de la Haute Couture Marocaine</h2>
-                    <p class="lead">Bienvenue chez Atelier Dahby, où l'art ancestral de la couture marocaine rencontre l'élégance moderne.</p>
-                    <p>Spécialisée dans le <strong>Beldi Moderne</strong> et le <strong>Traditionnel</strong>, notre maison crée des pièces uniques pour <strong>Femmes, Hommes et Enfants</strong>. Chaque création allie savoir-faire artisanal et design contemporain.</p>
-                    <p>Chaque point raconte une histoire, chaque vêtement porte l'âme du patrimoine marocain. De la sélection des plus belles soies aux derniers détails de broderie, nous garantissons des pièces d'exception.</p>
-                    <div class="about-features">
-                        <div class="feature">
-                            <span class="feature-icon">&#10003;</span>
-                            <span>Fait Main avec Soin</span>
-                        </div>
-                        <div class="feature">
-                            <span class="feature-icon">&#10003;</span>
-                            <span>Tissus Premium</span>
-                        </div>
-                        <div class="feature">
-                            <span class="feature-icon">&#10003;</span>
-                            <span>Mesures Sur-Mesure</span>
-                        </div>
-                        <div class="feature">
-                            <span class="feature-icon">&#10003;</span>
-                            <span>Techniques Ancestrales</span>
-                        </div>
+                <div class="collection-caftan-card">
+                    <img src="images/tenuex.jpg" alt="Jellaba Moderne">
+                    <div class="collection-caftan-info">
+                        <h3>Jellaba Moderne</h3>
+                    </div>
+                </div>
+                <div class="collection-caftan-card">
+                    <img src="images/collection-caftan-simple.jpg" alt="Jellaba Beldi">
+                    <div class="collection-caftan-info">
+                        <h3>Jellaba Beldi</h3>
+                    </div>
+                </div>
+                <div class="collection-caftan-card">
+                    <img src="images/tenue3.jpg" alt="Jellaba Élégante">
+                    <div class="collection-caftan-info">
+                        <h3>Jellaba Élégante</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -490,17 +359,20 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#home" class="logo footer-logo">
-                        <img src="images/logo.png" alt="Atelier Dahby" class="logo-img">
+                        <img src="images/nadialogo.png" alt="Nadia Dahby" class="logo-img">
                     </a>
                     <p>Préserver l'art de la couture marocaine traditionnelle, un point à la fois.</p>
+                    <a href="https://www.instagram.com" target="_blank" class="footer-instagram" aria-label="Instagram">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
                 </div>
                 <div class="footer-links">
                     <h4>Liens Rapides</h4>
                     <ul>
-                        <li><a href="#about">À Propos</a></li>
+                        <li><a href="about.html">À Propos</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#gallery">Galerie</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -512,14 +384,31 @@
                         <li><a href="#services">Sur Mesure</a></li>
                     </ul>
                 </div>
+                <div class="footer-links">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Politique de remboursement</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Newsletter</h4>
+                <p>Inscrivez-vous pour recevoir nos dernières collections et offres exclusives.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+                </form>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Atelier Dahby. Tous droits réservés.</p>
+                <p>&copy; 2026 Nadia Dahby. Tous droits réservés.</p>
                 <p class="arabic-text">نادية دهبي للأزياء الراقية</p>
             </div>
         </div>
     </footer>
 
+    <script src="products.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
