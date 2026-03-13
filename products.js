@@ -248,6 +248,18 @@ const PRODUCTS = {
             images: ['images/collection-kimono.jpg', 'images/kimonovert.jpg'],
             sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
         }
+    ],
+    gandora: [
+        {
+            id: 'gandora-royale',
+            name: 'Gandora Royale',
+            price: 6500,
+            category: 'gandora',
+            description: 'Gandora d\'exception réalisée à la main, alliant l\'élégance traditionnelle marocaine à une coupe moderne. Un savoir-faire artisanal unique pour une pièce intemporelle.',
+            details: ['Tissu: Satin duchesse', 'Broderie: Fils dorés faits main', 'Doublure: Satin de soie', 'Finitions: Passementerie artisanale'],
+            images: ['images/gandora1.png', 'images/gandora1.1.jpeg', 'images/gandora1.2.jpeg', 'images/gandora1.3.jpeg', 'images/gandora1.4.jpeg'],
+            sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
+        }
     ]
 };
 
