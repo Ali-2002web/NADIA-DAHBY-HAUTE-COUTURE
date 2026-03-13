@@ -1391,6 +1391,15 @@ section {
     justify-content: center;
 }
 
+.banner-gandora {
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+                url('images/gandora1.png') center/cover no-repeat;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .testimonials-banner-text {
     text-align: center;
 }
