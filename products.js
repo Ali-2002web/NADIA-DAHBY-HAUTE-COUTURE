@@ -25,16 +25,6 @@ const PRODUCTS = {
             sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
         },
         {
-            id: 'caftan-beldi-prestige',
-            name: 'Caftan Beldi Prestige',
-            price: 18000,
-            category: 'caftan',
-            description: 'Pièce d\'exception en velours de soie, ornée de broderies Rbati traditionnelles. Un hommage au savoir-faire ancestral marocain.',
-            details: ['Tissu: Velours de soie', 'Broderie: Rbati traditionnelle', 'Doublure: Soie naturelle', 'Finitions: Perles et cristaux Swarovski'],
-            images: ['images/tenuex.jpg', 'images/mannequin1.jpg', 'images/mannequin1.1.jpg', 'images/mannequin1.3.jpg'],
-            sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
-        },
-        {
             id: 'caftan-nuit-etoilee',
             name: 'Caftan Nuit Étoilée',
             price: 14000,
@@ -174,6 +164,16 @@ const PRODUCTS = {
             description: 'Ensemble kimono d\'exception aux finitions soignées, porté sur mannequin pour un rendu haute couture. Une pièce unique alliant tradition et modernité.',
             details: ['Tissu: Satin de soie', 'Broderie: Motifs traditionnels', 'Doublure: Satin', 'Finitions: Passementerie artisanale'],
             images: ['images/tenue2.jpg', 'images/collection-kimono.jpg'],
+            sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
+        },
+        {
+            id: 'caftan-beldi-prestige',
+            name: 'Kimono Beldi Prestige',
+            price: 18000,
+            category: 'kimono',
+            description: 'Pièce d\'exception en velours de soie, ornée de broderies Rbati traditionnelles. Un hommage au savoir-faire ancestral marocain.',
+            details: ['Tissu: Velours de soie', 'Broderie: Rbati traditionnelle', 'Doublure: Soie naturelle', 'Finitions: Perles et cristaux Swarovski'],
+            images: ['images/tenuex.jpg', 'images/mannequin1.jpg', 'images/mannequin1.1.jpg', 'images/mannequin1.3.jpg'],
             sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
         }
     ],
