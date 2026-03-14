@@ -15,10 +15,10 @@ const PRODUCTS = {
             sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
         },
         {
-            id: 'caftan-moderne-elegance',
-            name: 'Caftan Moderne Élégance',
+            id: 'kimono-moderne-elegance',
+            name: 'Kimono Moderne Élégance',
             price: 12000,
-            category: 'caftan',
+            category: 'kimono',
             description: 'Alliance parfaite entre tradition et modernité, ce caftan en crêpe de soie est sublimé par une broderie contemporaine aux motifs géométriques.',
             details: ['Tissu: Crêpe de soie', 'Broderie: Motifs géométriques modernes', 'Doublure: Satin', 'Finitions: Boutons en cristal'],
             images: ['images/kimonovert.jpg', 'images/mannequin2.jpg', 'images/mannequin2.2.jpg', 'images/mannequin2.3.jpg', 'images/collection-djellaba.jpg'],
