@@ -21,7 +21,7 @@ const PRODUCTS = {
             category: 'caftan',
             description: 'Alliance parfaite entre tradition et modernité, ce caftan en crêpe de soie est sublimé par une broderie contemporaine aux motifs géométriques.',
             details: ['Tissu: Crêpe de soie', 'Broderie: Motifs géométriques modernes', 'Doublure: Satin', 'Finitions: Boutons en cristal'],
-            images: ['images/kimonovert.jpg', 'images/collection-djellaba.jpg'],
+            images: ['images/kimonovert.jpg', 'images/mannequin2.jpg', 'images/mannequin2.2.jpg', 'images/mannequin2.3.jpg', 'images/collection-djellaba.jpg'],
             sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
         },
         {
@@ -103,7 +103,7 @@ const PRODUCTS = {
             category: 'kimono',
             description: 'Un ensemble d\'exception aux tons améthyste, brodé de fils d\'argent avec une coupe structurée et des finitions haut de gamme.',
             details: ['Tissu: Soie naturelle', 'Broderie: Fils d\'argent', 'Doublure: Satin', 'Finitions: Cristaux améthyste'],
-            images: ['images/kimonovert.jpg', 'images/collection-caftan.jpg'],
+            images: ['images/kimonovert.jpg', 'images/mannequin2.jpg', 'images/mannequin2.2.jpg', 'images/mannequin2.3.jpg', 'images/collection-caftan.jpg'],
             sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
         },
         {
@@ -225,7 +225,7 @@ const PRODUCTS = {
             category: 'jellaba',
             description: 'Hommage à la ville impériale de Fès, cette jellaba en soie mélangée arbore des broderies fassi raffinées.',
             details: ['Tissu: Soie mélangée', 'Broderie: Fassi raffinée', 'Capuche: Élégante brodée', 'Finitions: Boutons en passementerie'],
-            images: ['images/kimonovert.jpg', 'images/collection-djellaba.jpg'],
+            images: ['images/kimonovert.jpg', 'images/mannequin2.jpg', 'images/mannequin2.2.jpg', 'images/mannequin2.3.jpg', 'images/collection-djellaba.jpg'],
             sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
         },
         {
