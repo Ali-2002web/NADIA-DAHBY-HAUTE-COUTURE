@@ -760,29 +760,74 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCartDisplay();
 
     // ===================================
-    // Créations Carousel - Auto scroll + arrows
+    // 3D Carousel
     // ===================================
-    const track = document.getElementById('creationsTrack');
-    const prevBtn = document.getElementById('creationsPrev');
-    const nextBtn = document.getElementById('creationsNext');
+    const cards3d = document.querySelectorAll('.carousel-3d-card');
+    const prev3d = document.getElementById('carousel3dPrev');
+    const next3d = document.getElementById('carousel3dNext');
 
-    if (track) {
-        // Duplicate cards for seamless infinite loop
-        track.innerHTML += track.innerHTML;
+    if (cards3d.length > 0) {
+        let current3d = 0;
+        const total3d = cards3d.length;
 
-        let position = 0;
-        const halfWidth = track.scrollWidth / 2;
-
-        function scrollCarousel() {
-            position += 0.8;
-            if (position >= halfWidth) {
-                position = 0;
+        function update3dCarousel() {
+            cards3d.forEach(function(card) {
+                card.removeAttribute('data-pos');
+            });
+            for (var i = -2; i <= 2; i++) {
+                var idx = (current3d + i + total3d) % total3d;
+                cards3d[idx].setAttribute('data-pos', i + 2);
             }
-            track.style.transform = `translateX(-${position}px)`;
-            requestAnimationFrame(scrollCarousel);
         }
 
-        requestAnimationFrame(scrollCarousel);
+        update3dCarousel();
+
+        if (prev3d) {
+            prev3d.addEventListener('click', function() {
+                current3d = (current3d - 1 + total3d) % total3d;
+                update3dCarousel();
+            });
+        }
+        if (next3d) {
+            next3d.addEventListener('click', function() {
+                current3d = (current3d + 1) % total3d;
+                update3dCarousel();
+            });
+        }
+
+        // Auto-rotate
+        var autoRotate = setInterval(function() {
+            current3d = (current3d + 1) % total3d;
+            update3dCarousel();
+        }, 3500);
+
+        var carousel3dEl = document.getElementById('carousel3d');
+        if (carousel3dEl) {
+            carousel3dEl.addEventListener('mouseenter', function() { clearInterval(autoRotate); });
+            carousel3dEl.addEventListener('mouseleave', function() {
+                autoRotate = setInterval(function() {
+                    current3d = (current3d + 1) % total3d;
+                    update3dCarousel();
+                }, 3500);
+            });
+        }
+    }
+
+    // ===================================
+    // Créations Flat Carousel - Auto scroll
+    // ===================================
+    const flatTrack = document.getElementById('creationsTrack');
+    if (flatTrack) {
+        flatTrack.innerHTML += flatTrack.innerHTML;
+        let flatPos = 0;
+        const flatHalf = flatTrack.scrollWidth / 2;
+        function scrollFlat() {
+            flatPos += 0.8;
+            if (flatPos >= flatHalf) flatPos = 0;
+            flatTrack.style.transform = 'translateX(-' + flatPos + 'px)';
+            requestAnimationFrame(scrollFlat);
+        }
+        requestAnimationFrame(scrollFlat);
     }
 
     // ===================================
