@@ -31,7 +31,7 @@ const PRODUCTS = {
             category: 'caftan',
             description: 'Pièce d\'exception en velours de soie, ornée de broderies Rbati traditionnelles. Un hommage au savoir-faire ancestral marocain.',
             details: ['Tissu: Velours de soie', 'Broderie: Rbati traditionnelle', 'Doublure: Soie naturelle', 'Finitions: Perles et cristaux Swarovski'],
-            images: ['images/tenuex.jpg', 'images/collection-caftan.jpg'],
+            images: ['images/tenuex.jpg', 'images/mannequin1.jpg', 'images/mannequin1.1.jpg', 'images/mannequin1.3.jpg'],
             sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
         },
         {
@@ -173,7 +173,7 @@ const PRODUCTS = {
             category: 'kimono',
             description: 'Ensemble kimono d\'exception aux finitions soignées, porté sur mannequin pour un rendu haute couture. Une pièce unique alliant tradition et modernité.',
             details: ['Tissu: Satin de soie', 'Broderie: Motifs traditionnels', 'Doublure: Satin', 'Finitions: Passementerie artisanale'],
-            images: ['images/tenue2.jpg', 'images/mannequin1.jpg', 'images/mannequin1.1.jpg', 'images/mannequin1.3.jpg'],
+            images: ['images/tenue2.jpg', 'images/collection-kimono.jpg'],
             sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
         }
     ],
