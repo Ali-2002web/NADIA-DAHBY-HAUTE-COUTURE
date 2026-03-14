@@ -165,6 +165,16 @@ const PRODUCTS = {
             details: ['Tissu: Crêpe de soie', 'Broderie: Dorure à la main', 'Doublure: Satin', 'Finitions: Bordures en fil d\'or'],
             images: ['images/collection-caftan-simple.jpg', 'images/collection-kimono.jpg'],
             sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
+        },
+        {
+            id: 'kimono-tenue-prestige',
+            name: 'Ensemble Kimono Prestige',
+            price: 7000,
+            category: 'kimono',
+            description: 'Ensemble kimono d\'exception aux finitions soignées, porté sur mannequin pour un rendu haute couture. Une pièce unique alliant tradition et modernité.',
+            details: ['Tissu: Satin de soie', 'Broderie: Motifs traditionnels', 'Doublure: Satin', 'Finitions: Passementerie artisanale'],
+            images: ['images/tenue2.jpg', 'images/mannequin1.jpg', 'images/mannequin1.1.jpg', 'images/mannequin1.3.jpg'],
+            sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
         }
     ],
     jellaba: [
