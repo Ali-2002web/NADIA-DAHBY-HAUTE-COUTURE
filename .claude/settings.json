@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:ma.bouchrafilalilahlou.com)"
+      "WebFetch(domain:ma.bouchrafilalilahlou.com)",
+      "WebFetch(domain:www.syntx.ai)",
+      "Bash(ls images/*.mp4 images/*.webm images/*.mov)",
+      "Bash(ls \"c:\\\\Users\\\\dahby\\\\OneDrive - UIR\\\\Documents\\\\GitHub\\\\NADIA-DAHBY-HAUTE-COUTURE\\\\images\\\\kimonohabiba\"*)",
+      "Bash(ls \"c:\\\\Users\\\\dahby\\\\OneDrive - UIR\\\\Documents\\\\GitHub\\\\NADIA-DAHBY-HAUTE-COUTURE\\\\images/\"*habiba*)"
     ]
   }
 }

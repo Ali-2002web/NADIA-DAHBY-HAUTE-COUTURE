@@ -87,6 +87,16 @@ const PRODUCTS = {
             sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
         },
         {
+            id: 'kimono-orange',
+            name: 'Kimono Orange',
+            price: 7000,
+            category: 'kimono',
+            description: 'Un kimono éclatant aux tons orangés, confectionné à la main avec des matières nobles. Porté par notre mannequin Habiba pour sublimer chaque détail.',
+            details: ['Tissu: Crêpe de soie', 'Couleur: Orange raffiné', 'Doublure: Satin', 'Finitions: Broderies artisanales'],
+            images: ['images/kimonorange.jpg', 'images/kimonohabiba2.jpeg', 'images/kimonohabiba3.jpeg', 'images/kimonohabiba4.jpeg', 'images/kimonohabiba5.jpeg'],
+            sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
+        },
+        {
             id: 'kimono-eclat-du-sahara',
             name: 'Ensemble Kimono Éclat du Sahara',
             price: 7500,

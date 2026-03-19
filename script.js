@@ -760,67 +760,13 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCartDisplay();
 
     // ===================================
-    // 3D Carousel
+    // Flat Creations Carousel - Auto scroll
     // ===================================
-    const cards3d = document.querySelectorAll('.carousel-3d-card');
-    const prev3d = document.getElementById('carousel3dPrev');
-    const next3d = document.getElementById('carousel3dNext');
-
-    if (cards3d.length > 0) {
-        let current3d = 0;
-        const total3d = cards3d.length;
-
-        function update3dCarousel() {
-            cards3d.forEach(function(card) {
-                card.removeAttribute('data-pos');
-            });
-            for (var i = -2; i <= 2; i++) {
-                var idx = (current3d + i + total3d) % total3d;
-                cards3d[idx].setAttribute('data-pos', i + 2);
-            }
-        }
-
-        update3dCarousel();
-
-        if (prev3d) {
-            prev3d.addEventListener('click', function() {
-                current3d = (current3d - 1 + total3d) % total3d;
-                update3dCarousel();
-            });
-        }
-        if (next3d) {
-            next3d.addEventListener('click', function() {
-                current3d = (current3d + 1) % total3d;
-                update3dCarousel();
-            });
-        }
-
-        // Auto-rotate
-        var autoRotate = setInterval(function() {
-            current3d = (current3d + 1) % total3d;
-            update3dCarousel();
-        }, 3500);
-
-        var carousel3dEl = document.getElementById('carousel3d');
-        if (carousel3dEl) {
-            carousel3dEl.addEventListener('mouseenter', function() { clearInterval(autoRotate); });
-            carousel3dEl.addEventListener('mouseleave', function() {
-                autoRotate = setInterval(function() {
-                    current3d = (current3d + 1) % total3d;
-                    update3dCarousel();
-                }, 3500);
-            });
-        }
-    }
-
-    // ===================================
-    // Créations Flat Carousel - Auto scroll
-    // ===================================
-    const flatTrack = document.getElementById('creationsTrack');
+    var flatTrack = document.getElementById('creationsTrack');
     if (flatTrack) {
         flatTrack.innerHTML += flatTrack.innerHTML;
-        let flatPos = 0;
-        const flatHalf = flatTrack.scrollWidth / 2;
+        var flatPos = 0;
+        var flatHalf = flatTrack.scrollWidth / 2;
         function scrollFlat() {
             flatPos += 0.8;
             if (flatPos >= flatHalf) flatPos = 0;
@@ -830,6 +776,115 @@ document.addEventListener('DOMContentLoaded', function() {
         requestAnimationFrame(scrollFlat);
     }
 
+    // ===================================
+    // Nadia Dahby Carousel - Scroll buttons
+    // ===================================
+    var cardsContainer = document.querySelector('.cards-container');
+    var prevBtn = document.querySelector('.nav-btn.prev');
+    var nextBtn = document.querySelector('.nav-btn.next');
+
+    if (cardsContainer) {
+        var scrollAmount = 294;
+        var carouselCards = document.querySelectorAll('.creations-section .card');
+
+        var headingEl = document.querySelector('.creations-3d-heading');
+        var currentTitle = '';
+
+        function applyCoverflowEffect() {
+            var wrapperRect = cardsContainer.closest('.carousel-wrapper').getBoundingClientRect();
+            var centerX = wrapperRect.left + wrapperRect.width * 0.55;
+            var closestDist = Infinity;
+            var closestCaption = '';
+
+            carouselCards.forEach(function(card) {
+                var cardRect = card.getBoundingClientRect();
+                var cardCenter = cardRect.left + cardRect.width / 2;
+                var distance = cardCenter - centerX;
+                var maxDist = wrapperRect.width * 0.6;
+                var ratio = Math.min(Math.abs(distance) / maxDist, 1);
+
+                // Track closest card to center
+                if (Math.abs(distance) < closestDist) {
+                    closestDist = Math.abs(distance);
+                    var cap = card.querySelector('.caption');
+                    if (cap) closestCaption = cap.textContent;
+                }
+
+                // Rotation: center = 0, sides tilt away (cylindrical curve)
+                var rotateY = (distance / maxDist) * 45;
+                rotateY = Math.max(-45, Math.min(45, rotateY));
+
+                // Scale: center = 1, edges shrink
+                var scale = 1 - ratio * 0.18;
+
+                // TranslateZ: push side cards back for depth
+                var translateZ = -ratio * 120;
+
+                // Z-index: center card on top
+                var zIndex = Math.round((1 - ratio) * 10);
+
+                card.style.transform = 'perspective(1000px) rotateY(' + rotateY + 'deg) scale(' + scale + ') translateZ(' + translateZ + 'px)';
+                card.style.zIndex = zIndex;
+
+                // Softer shadow for side cards
+                var shadowOpacity = 0.12 + ratio * 0.08;
+                var shadowBlur = 30 + ratio * 20;
+                var media = card.querySelector('img') || card.querySelector('video');
+                if (media) media.style.boxShadow = '0 ' + (15 + ratio * 10) + 'px ' + shadowBlur + 'px rgba(0,0,0,' + shadowOpacity + ')';
+            });
+
+            // Update heading with center card title
+            if (headingEl && closestCaption && closestCaption !== currentTitle) {
+                currentTitle = closestCaption;
+                headingEl.style.opacity = '0';
+                setTimeout(function() {
+                    headingEl.textContent = closestCaption;
+                    headingEl.style.opacity = '1';
+                }, 200);
+            }
+        }
+
+        // Auto-scroll animation
+        var autoPos = 0;
+        var autoSpeed = 0.4;
+        var autoPaused = false;
+
+        function autoScroll() {
+            if (!autoPaused) {
+                autoPos += autoSpeed;
+                cardsContainer.scrollLeft = autoPos;
+                if (cardsContainer.scrollLeft >= cardsContainer.scrollWidth - cardsContainer.clientWidth) {
+                    autoPos = 0;
+                }
+            }
+            applyCoverflowEffect();
+            requestAnimationFrame(autoScroll);
+        }
+        requestAnimationFrame(autoScroll);
+
+        cardsContainer.closest('.carousel-wrapper').addEventListener('mouseenter', function() { autoPaused = true; });
+        cardsContainer.closest('.carousel-wrapper').addEventListener('mouseleave', function() {
+            autoPaused = false;
+            autoPos = cardsContainer.scrollLeft;
+        });
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function() {
+                autoPaused = true;
+                cardsContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                setTimeout(function() { autoPos = cardsContainer.scrollLeft; autoPaused = false; }, 500);
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function() {
+                autoPaused = true;
+                cardsContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                setTimeout(function() { autoPos = cardsContainer.scrollLeft; autoPaused = false; }, 500);
+            });
+        }
+    }
+
+    // ===================================
     // ===================================
     // Product Slider (Collection Pages)
     // ===================================
