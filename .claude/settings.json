@@ -5,7 +5,9 @@
       "WebFetch(domain:www.syntx.ai)",
       "Bash(ls images/*.mp4 images/*.webm images/*.mov)",
       "Bash(ls \"c:\\\\Users\\\\dahby\\\\OneDrive - UIR\\\\Documents\\\\GitHub\\\\NADIA-DAHBY-HAUTE-COUTURE\\\\images\\\\kimonohabiba\"*)",
-      "Bash(ls \"c:\\\\Users\\\\dahby\\\\OneDrive - UIR\\\\Documents\\\\GitHub\\\\NADIA-DAHBY-HAUTE-COUTURE\\\\images/\"*habiba*)"
+      "Bash(ls \"c:\\\\Users\\\\dahby\\\\OneDrive - UIR\\\\Documents\\\\GitHub\\\\NADIA-DAHBY-HAUTE-COUTURE\\\\images/\"*habiba*)",
+      "Bash(ls \"c:\\\\Users\\\\dahby\\\\OneDrive - UIR\\\\Documents\\\\GitHub\\\\NADIA-DAHBY-HAUTE-COUTURE\\\\images/\"kaftan*)",
+      "Bash(ls \"c:\\\\Users\\\\dahby\\\\OneDrive - UIR\\\\Documents\\\\GitHub\\\\NADIA-DAHBY-HAUTE-COUTURE\\\\images/backkaftan\"*)"
     ]
   }
 }

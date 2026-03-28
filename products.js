@@ -5,6 +5,16 @@
 const PRODUCTS = {
     caftan: [
         {
+            id: 'caftan-rose',
+            name: 'Caftan Rose',
+            price: 13000,
+            category: 'caftan',
+            description: 'Un caftan rose d\'une élégance rare, confectionné en soie avec des broderies délicates. Les tons rosés apportent une touche de féminité et de raffinement.',
+            details: ['Tissu: Soie naturelle', 'Couleur: Rose poudré', 'Doublure: Satin de soie', 'Finitions: Broderies artisanales'],
+            images: ['images/kaftanrose.jpg', 'images/backkaftan.png', 'images/kaftan1.jpg', 'images/kaftan2.jpg', 'images/kaftan3.jpg'],
+            sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
+        },
+        {
             id: 'caftan-traditionnel-royal',
             name: 'Caftan Traditionnel Royal',
             price: 15000,
@@ -174,6 +184,16 @@ const PRODUCTS = {
             description: 'Ensemble kimono d\'exception aux finitions soignées, porté sur mannequin pour un rendu haute couture. Une pièce unique alliant tradition et modernité.',
             details: ['Tissu: Satin de soie', 'Broderie: Motifs traditionnels', 'Doublure: Satin', 'Finitions: Passementerie artisanale'],
             images: ['images/tenue2.jpg', 'images/collection-kimono.jpg'],
+            sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
+        },
+        {
+            id: 'kimono-mauve',
+            name: 'Kimono Mauve',
+            price: 7000,
+            category: 'kimono',
+            description: 'Un kimono mauve d\'une élégance subtile, confectionné avec des matières nobles. Les tons mauves apportent une touche de douceur et de sophistication.',
+            details: ['Tissu: Crêpe de soie', 'Couleur: Mauve raffiné', 'Doublure: Satin', 'Finitions: Broderies artisanales'],
+            images: ['images/kimonomauve.jpg', 'images/kimonomanequin1.jpg', 'images/kimonomanquin2.jpg'],
             sizes: ['S', 'M', 'L', 'XL', 'Sur Mesure']
         },
         {
