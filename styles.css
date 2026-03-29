@@ -1741,8 +1741,12 @@ section {
     transition: transform 0.5s ease;
 }
 
-.collection-page-item:hover img {
+.collection-page-item:hover > a > img {
     transform: scale(1.05);
+}
+
+.collection-page-item .product-slider:hover img {
+    transform: none;
 }
 
 .collection-page-item p {
@@ -1766,6 +1770,8 @@ section {
 
 .product-slider-track > * {
     min-width: 100%;
+    width: 100%;
+    flex-shrink: 0;
     display: block;
 }
 
@@ -1789,7 +1795,7 @@ section {
 }
 
 .product-slider:hover .product-slider-dots {
-    opacity: 1;
+    opacity: 0;
 }
 
 .product-slider-dots .dot {

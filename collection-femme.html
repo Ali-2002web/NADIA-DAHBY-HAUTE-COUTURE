@@ -5,260 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collection Femme | Nadia Dahby</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        .page-hero {
-            height: 50vh;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(44, 44, 44, 0.9) 0%, rgba(74, 63, 63, 0.85) 100%),
-                        url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=1920&h=800&fit=crop') center/cover no-repeat;
-            text-align: center;
-            color: var(--white);
-            padding-top: 80px;
-        }
-
-        .page-hero h1 {
-            font-size: 52px;
-            color: var(--white);
-            margin-bottom: 16px;
-        }
-
-        .page-hero p {
-            font-size: 18px;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .breadcrumb {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .breadcrumb a {
-            color: var(--secondary);
-        }
-
-        .breadcrumb span {
-            opacity: 0.6;
-        }
-
-        .collection-section {
-            padding: 80px 0;
-            background: var(--cream);
-        }
-
-        .collection-category {
-            margin-bottom: 60px;
-        }
-
-        .collection-category:last-child {
-            margin-bottom: 0;
-        }
-
-        .category-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .category-header h2 {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-
-        .category-header p {
-            color: var(--text-light);
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .product-card {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .product-image {
-            height: 320px;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.05);
-        }
-
-        /* Product Placeholders */
-        .product-placeholder {
-            height: 320px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-placeholder[data-type="caftan-mariee"] {
-            background: linear-gradient(135deg, #D4A5AE 0%, #C4919B 50%, #8B4557 100%);
-        }
-
-        .product-placeholder[data-type="takchita"] {
-            background: linear-gradient(135deg, #B8860B 0%, #DAA520 50%, #FFD700 100%);
-        }
-
-        .product-placeholder[data-type="jellaba-homme"] {
-            background: linear-gradient(135deg, #5D4E37 0%, #8B7355 50%, #A0522D 100%);
-        }
-
-        /* Motif géométrique marocain */
-        .product-placeholder::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image:
-                repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 40px),
-                repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(255,255,255,0.05) 20px, rgba(255,255,255,0.05) 40px);
-            pointer-events: none;
-        }
-
-        /* Bordure décorative */
-        .product-placeholder::after {
-            content: '';
-            position: absolute;
-            inset: 15px;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 4px;
-            pointer-events: none;
-        }
-
-        .product-placeholder .placeholder-icon {
-            font-size: 48px;
-            opacity: 0.9;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-        }
-
-        .product-placeholder .placeholder-text {
-            font-family: var(--font-heading);
-            font-size: 14px;
-            color: rgba(255,255,255,0.9);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .product-card:hover .product-placeholder {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-        }
-
-        .product-info {
-            padding: 24px;
-            text-align: center;
-        }
-
-        .product-info h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .product-info p {
-            color: var(--text-light);
-            font-size: 14px;
-            margin-bottom: 16px;
-        }
-
-        .product-tag {
-            display: inline-block;
-            padding: 6px 16px;
-            background: var(--sand);
-            color: var(--primary-dark);
-            font-size: 12px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 20px;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            padding: 80px 0;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .cta-section h2 {
-            color: var(--white);
-            font-size: 36px;
-            margin-bottom: 16px;
-        }
-
-        .cta-section p {
-            opacity: 0.9;
-            margin-bottom: 32px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-section .btn-primary {
-            background: var(--white);
-            color: var(--primary-dark);
-        }
-
-        .cta-section .btn-primary:hover {
-            background: var(--secondary);
-            color: var(--dark);
-        }
-
-        @media (max-width: 1024px) {
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .page-hero h1 {
-                font-size: 36px;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .product-image {
-                height: 280px;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Amiri:wght@400;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar scrolled">
+    <nav class="navbar scrolled" style="background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
         <div class="nav-container">
             <a href="index.html" class="logo">
                 <img src="images/nadialogo.png" alt="Nadia Dahby" class="logo-img">
@@ -271,13 +22,36 @@
             </button>
             <ul class="nav-menu">
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="index.html#about">À Propos</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#gallery">Galerie</a></li>
-                <li><a href="index.html#process">Processus</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#caftan">Caftan</a></li>
+                <li class="has-dropdown">
+                    <a href="index.html#jellaba">Jellaba <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#jellaba-femme">Femme</a></li>
+                        <li><a href="index.html#jellaba-homme">Homme</a></li>
+                        <li><a href="index.html#jellaba-enfant">Enfant</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="index.html#gandoura">Gandoura <span class="dropdown-arrow">&#9662;</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#gandoura-femme">Femme</a></li>
+                        <li><a href="index.html#gandoura-homme">Homme</a></li>
+                        <li><a href="index.html#gandoura-enfant">Enfant</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#kimono">Kimono-Tunique</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">À Propos</a></li>
             </ul>
             <div class="nav-actions">
+                <div class="search-wrapper">
+                    <button class="search-toggle" aria-label="Rechercher">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="M21 21l-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
                 <button class="cart-toggle" aria-label="Panier" id="cartToggle">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="9" cy="21" r="1"></circle>
@@ -309,191 +83,22 @@
     </div>
     <div class="cart-overlay" id="cartOverlay"></div>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
+    <!-- Collection Page -->
+    <section class="collection-page">
         <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html">Accueil</a>
-                <span>/</span>
-                <span>Collection Femme</span>
-            </div>
-            <h1>Collection Femme</h1>
-            <p>Caftans, Takchitas et Jellabas pour femmes. Du beldi moderne aux créations traditionnelles pour mariages et cérémonies.</p>
-        </div>
-    </section>
-
-    <!-- Collection Section -->
-    <section class="collection-section">
-        <div class="container">
-
-            <!-- Caftans de Mariage -->
-            <div class="collection-category">
-                <div class="category-header">
-                    <span class="section-subtitle">Mariage & Cérémonies</span>
-                    <h2>Caftans de Mariage</h2>
-                    <p>Des créations somptueuses pour le plus beau jour de votre vie</p>
-                </div>
-                <div class="products-grid">
-                    <div class="product-card" data-id="caftan-royal" data-name="Caftan Royal" data-price="15000">
-                        <div class="product-image">
-                            <div class="placeholder-image product-placeholder" data-type="caftan-mariee">
-                                <span class="placeholder-icon">&#128081;</span>
-                                <span class="placeholder-text">Photo Caftan</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Caftan Royal</h3>
-                            <p>Soie brodée avec fils d'or, perles et cristaux Swarovski</p>
-                            <span class="product-price">15 000 DH</span>
-                            <button class="btn-add-cart" onclick="addToCart('caftan-royal', 'Caftan Royal', 15000)">Ajouter au panier</button>
-                        </div>
-                    </div>
-                    <div class="product-card" data-id="caftan-princesse" data-name="Caftan Princesse" data-price="12000">
-                        <div class="product-image">
-                            <div class="placeholder-image product-placeholder" data-type="caftan-mariee">
-                                <span class="placeholder-icon">&#128081;</span>
-                                <span class="placeholder-text">Photo Caftan</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Caftan Princesse</h3>
-                            <p>Brocart de soie avec broderie Fassi traditionnelle</p>
-                            <span class="product-price">12 000 DH</span>
-                            <button class="btn-add-cart" onclick="addToCart('caftan-princesse', 'Caftan Princesse', 12000)">Ajouter au panier</button>
-                        </div>
-                    </div>
-                    <div class="product-card" data-id="caftan-imperial" data-name="Caftan Impérial" data-price="18000">
-                        <div class="product-image">
-                            <div class="placeholder-image product-placeholder" data-type="caftan-mariee">
-                                <span class="placeholder-icon">&#128081;</span>
-                                <span class="placeholder-text">Photo Caftan</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Caftan Impérial</h3>
-                            <p>Velours de soie avec sfifa et akaad dorés</p>
-                            <span class="product-price">18 000 DH</span>
-                            <button class="btn-add-cart" onclick="addToCart('caftan-imperial', 'Caftan Impérial', 18000)">Ajouter au panier</button>
-                        </div>
-                    </div>
+            <div class="collection-page-header">
+                <h1>TOUTES LES COLLECTIONS</h1>
+                <div class="collection-filter">
+                    <select>
+                        <option>En vedette</option>
+                        <option>Prix croissant</option>
+                        <option>Prix décroissant</option>
+                        <option>Nouveautés</option>
+                    </select>
                 </div>
             </div>
-
-            <!-- Takchitas Modernes -->
-            <div class="collection-category">
-                <div class="category-header">
-                    <span class="section-subtitle">Beldi Moderne</span>
-                    <h2>Takchitas Modernes</h2>
-                    <p>L'élégance traditionnelle revisitée avec une touche contemporaine</p>
-                </div>
-                <div class="products-grid">
-                    <div class="product-card" data-id="takchita-rose" data-name="Takchita Rose Poudré" data-price="8500">
-                        <div class="product-image">
-                            <div class="placeholder-image product-placeholder" data-type="takchita">
-                                <span class="placeholder-icon">&#10024;</span>
-                                <span class="placeholder-text">Photo Takchita</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Takchita Rose Poudré</h3>
-                            <p>Crêpe de soie avec broderie ton sur ton</p>
-                            <span class="product-price">8 500 DH</span>
-                            <button class="btn-add-cart" onclick="addToCart('takchita-rose', 'Takchita Rose Poudré', 8500)">Ajouter au panier</button>
-                        </div>
-                    </div>
-                    <div class="product-card" data-id="takchita-emeraude" data-name="Takchita Émeraude" data-price="9000">
-                        <div class="product-image">
-                            <div class="placeholder-image product-placeholder" data-type="takchita">
-                                <span class="placeholder-icon">&#10024;</span>
-                                <span class="placeholder-text">Photo Takchita</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Takchita Émeraude</h3>
-                            <p>Satin duchesse avec motifs géométriques modernes</p>
-                            <span class="product-price">9 000 DH</span>
-                            <button class="btn-add-cart" onclick="addToCart('takchita-emeraude', 'Takchita Émeraude', 9000)">Ajouter au panier</button>
-                        </div>
-                    </div>
-                    <div class="product-card" data-id="takchita-doree" data-name="Takchita Dorée" data-price="9500">
-                        <div class="product-image">
-                            <div class="placeholder-image product-placeholder" data-type="takchita">
-                                <span class="placeholder-icon">&#10024;</span>
-                                <span class="placeholder-text">Photo Takchita</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Takchita Dorée</h3>
-                            <p>Organza et dentelle avec finitions dorées</p>
-                            <span class="product-price">9 500 DH</span>
-                            <button class="btn-add-cart" onclick="addToCart('takchita-doree', 'Takchita Dorée', 9500)">Ajouter au panier</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="collection-page-grid" id="allProductsGrid">
             </div>
-
-            <!-- Jellabas Beldi -->
-            <div class="collection-category">
-                <div class="category-header">
-                    <span class="section-subtitle">Traditionnel</span>
-                    <h2>Jellabas Beldi</h2>
-                    <p>L'authenticité marocaine dans chaque détail</p>
-                </div>
-                <div class="products-grid">
-                    <div class="product-card" data-id="jellaba-classique" data-name="Jellaba Classique" data-price="3500">
-                        <div class="product-image">
-                            <div class="placeholder-image product-placeholder" data-type="jellaba-homme">
-                                <span class="placeholder-icon">&#128090;</span>
-                                <span class="placeholder-text">Photo Jellaba</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Jellaba Classique</h3>
-                            <p>Laine mérinos avec broderie Rbati traditionnelle</p>
-                            <span class="product-price">3 500 DH</span>
-                            <button class="btn-add-cart" onclick="addToCart('jellaba-classique', 'Jellaba Classique', 3500)">Ajouter au panier</button>
-                        </div>
-                    </div>
-                    <div class="product-card" data-id="jellaba-festive" data-name="Jellaba Festive" data-price="4200">
-                        <div class="product-image">
-                            <div class="placeholder-image product-placeholder" data-type="jellaba-homme">
-                                <span class="placeholder-icon">&#128090;</span>
-                                <span class="placeholder-text">Photo Jellaba</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Jellaba Festive</h3>
-                            <p>Crêpe marocain avec sfifa et boutons traditionnels</p>
-                            <span class="product-price">4 200 DH</span>
-                            <button class="btn-add-cart" onclick="addToCart('jellaba-festive', 'Jellaba Festive', 4200)">Ajouter au panier</button>
-                        </div>
-                    </div>
-                    <div class="product-card" data-id="jellaba-elegante" data-name="Jellaba Élégante" data-price="4800">
-                        <div class="product-image">
-                            <div class="placeholder-image product-placeholder" data-type="jellaba-homme">
-                                <span class="placeholder-icon">&#128090;</span>
-                                <span class="placeholder-text">Photo Jellaba</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Jellaba Élégante</h3>
-                            <p>Tissu léger avec capuche brodée artisanalement</p>
-                            <span class="product-price">4 800 DH</span>
-                            <button class="btn-add-cart" onclick="addToCart('jellaba-elegante', 'Jellaba Élégante', 4800)">Ajouter au panier</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Créons Votre Pièce Unique</h2>
-            <p>Chaque création peut être personnalisée selon vos envies. Prenez rendez-vous pour une consultation privée.</p>
-            <a href="index.html#contact" class="btn btn-primary">Prendre Rendez-vous</a>
         </div>
     </section>
 
@@ -506,33 +111,90 @@
                         <img src="images/nadialogo.png" alt="Nadia Dahby" class="logo-img">
                     </a>
                     <p>Préserver l'art de la couture marocaine traditionnelle, un point à la fois.</p>
+                    <a href="https://www.instagram.com" target="_blank" class="footer-instagram" aria-label="Instagram">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
                 </div>
                 <div class="footer-links">
                     <h4>Liens Rapides</h4>
                     <ul>
-                        <li><a href="index.html#about">À Propos</a></li>
+                        <li><a href="about.html">À Propos</a></li>
                         <li><a href="index.html#services">Services</a></li>
                         <li><a href="index.html#gallery">Galerie</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Collections</h4>
                     <ul>
-                        <li><a href="collection-femme.html">Collection Femme</a></li>
-                        <li><a href="index.html#services">Collection Homme</a></li>
-                        <li><a href="index.html#services">Collection Enfant</a></li>
+                        <li><a href="collection-caftan.html">Collection Caftan</a></li>
+                        <li><a href="collection-kimono.html">Collection Kimono</a></li>
+                        <li><a href="collection-jellaba.html">Collection Jellaba</a></li>
                         <li><a href="index.html#services">Sur Mesure</a></li>
                     </ul>
                 </div>
+                <div class="footer-links">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Politique de remboursement</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Newsletter</h4>
+                <p>Inscrivez-vous pour recevoir nos dernières collections et offres exclusives.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+                </form>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Nadia Dahby. Tous droits réservés.</p>
+                <p>&copy; 2026 Nadia Dahby. Tous droits réservés.</p>
                 <p class="arabic-text">نادية دهبي للأزياء الراقية</p>
             </div>
         </div>
     </footer>
 
+    <script src="products.js"></script>
     <script src="script.js"></script>
+    <script>
+        (function() {
+            var grid = document.getElementById('allProductsGrid');
+            var allProducts = [];
+
+            Object.keys(PRODUCTS).forEach(function(category) {
+                PRODUCTS[category].forEach(function(product) {
+                    allProducts.push(product);
+                });
+            });
+
+            allProducts.forEach(function(product) {
+                var images = product.images.slice(0, 2);
+                var slidesHTML = '';
+                var dotsHTML = '';
+
+                images.forEach(function(img, i) {
+                    slidesHTML += '<div><img src="' + img + '" alt="' + product.name + '"></div>';
+                    dotsHTML += '<span class="dot' + (i === 0 ? ' active' : '') + '"></span>';
+                });
+
+                var itemHTML = '<div class="collection-page-item">' +
+                    '<a href="product.html?id=' + product.id + '">' +
+                        '<div class="product-slider">' +
+                            '<div class="product-slider-track">' + slidesHTML + '</div>' +
+                            '<div class="product-slider-dots">' + dotsHTML + '</div>' +
+                        '</div>' +
+                        '<div class="collection-item-info">' +
+                            '<p class="collection-item-name">' + product.name + '</p>' +
+                        '</div>' +
+                    '</a>' +
+                '</div>';
+
+                grid.innerHTML += itemHTML;
+            });
+        })();
+    </script>
 </body>
 </html>
